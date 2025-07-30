@@ -3,7 +3,7 @@ import VideoContainer from './VideoContainer';
 
 const MainContainer = () => {
   return (
-    <div>
+    <div className='flex-1 h-full overflow-y-auto px-6 pb-28 hide-scrollbar'>
       <ButtonList />
       <VideoContainer />
     </div>

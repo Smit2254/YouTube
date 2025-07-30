@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import SidebarItem from './SidebarItems';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -11,12 +12,15 @@ const Sidebar = () => {
       } px-2 h-screen overflow-y-auto hide-scrollbar transition-all duration-300`}
     >
       <div className='py-2'>
-        <SidebarItem icon='home' label='Home' active collapsed={!isMenuOpen} />
+        <Link to='/'>
+          <SidebarItem icon='home' label='Home' active collapsed={!isMenuOpen} />
+        </Link>
         <SidebarItem icon='flash' label='Shorts' collapsed={!isMenuOpen} />
         <SidebarItem icon='albums' label='Subscriptions' collapsed={!isMenuOpen} />
         <SidebarItem icon='play-circle' label='Music' collapsed={!isMenuOpen} />
         <SidebarItem icon='person-circle' label='You' collapsed={!isMenuOpen} />
         <SidebarItem icon='download' label='Downloads' collapsed={!isMenuOpen} />
+        {isMenuOpen && <hr className='border-gray-300 my-2' />}
       </div>
 
       {isMenuOpen && (
