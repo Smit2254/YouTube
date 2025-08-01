@@ -5,7 +5,9 @@ const Body = () => {
   return (
     <div className='flex h-screen overflow-hidden'>
       <Sidebar />
-      <Outlet />
+      <div className='flex-1 overflow-y-auto'>
+        <Outlet /> {/* or <MainContainer /> / <WatchPage /> */}
+      </div>
     </div>
   );
 };
